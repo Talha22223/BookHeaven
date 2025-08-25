@@ -12,7 +12,7 @@ function RecentlyAdd() {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get("http://localhost:3000/api/v1/get-recent-books");
+                const response = await axios.get("https://bookheaven-production.up.railway.app/api/v1/get-recent-books");
                 console.log("API Response:", response.data);
                 
                 if (response.data && Array.isArray(response.data)) {

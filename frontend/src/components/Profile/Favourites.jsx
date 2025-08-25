@@ -17,7 +17,7 @@ const Favourites = () => {
     const fetchFavourites = async () => {
         setLoading(true); // ensure loading is set before fetch
         try {
-            const response = await axios.get("http://localhost:3000/api/v1/get-favourites", { headers });
+            const response = await axios.get("https://bookheaven-production.up.railway.app/api/v1/get-favourites", { headers });
             console.log("Favourites API response:", response.data);
             setFavouriteBooks(response.data.favourites || []);
         } catch (err) {
@@ -37,7 +37,7 @@ const Favourites = () => {
     const removeFromFavourites = async (bookId) => {
         try {
             setRemovingId(bookId);
-            await axios.put(`http://localhost:3000/api/v1/remove-book-from-favourite`, 
+            await axios.put(`https://bookheaven-production.up.railway.app/api/v1/remove-book-from-favourite`, 
                 { bookid: bookId }, 
                 { headers }
             );

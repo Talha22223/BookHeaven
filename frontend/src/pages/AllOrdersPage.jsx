@@ -18,7 +18,7 @@ const AllOrdersPage = () => {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/get-all-orders', { headers });
+      const response = await axios.get('https://bookheaven-production.up.railway.app/api/v1/get-all-orders', { headers });
       setOrderHistory(response.data.orders || []);
       setError("");
     } catch (err) {
@@ -69,7 +69,7 @@ const AllOrdersPage = () => {
     setUpdatingId(orderId);
     try {
       await axios.put(
-        `http://localhost:3000/api/v1/update-status/${orderId}`,
+        `https://bookheaven-production.up.railway.app/api/v1/update-status/${orderId}`,
         { status: newStatus },
         { headers }
       );

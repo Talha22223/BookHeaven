@@ -28,7 +28,7 @@ const AddBookPage = () => {
         "id": localStorage.getItem("id"),
         "Authorization": `Bearer ${localStorage.getItem("token")}`
       };
-      const res = await axios.post('http://localhost:3000/api/v1/add-book', form, { headers });
+      const res = await axios.post('https://bookheaven-production.up.railway.app/api/v1/add-book', form, { headers });
       setMessage(res.data.message || 'Book added successfully');
       setForm(initialState);
     } catch (err) {

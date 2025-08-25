@@ -30,7 +30,7 @@ const ViewBookDetails = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:3000/api/v1/get-book/${id}`);
+                const response = await axios.get(`https://bookheaven-production.up.railway.app/api/v1/get-book/${id}`);
                 console.log("API Response:", response.data);
 
                 const bookData = response.data?.data;
@@ -72,7 +72,7 @@ const ViewBookDetails = () => {
     const handleFavourite = async () => {
         try {
             const response = await axios.put(
-                'http://localhost:3000/api/v1/add-book-to-favourite',
+                'https://bookheaven-production.up.railway.app/api/v1/add-book-to-favourite',
                 { bookId: id },
                 { headers }
             );
@@ -87,7 +87,7 @@ const ViewBookDetails = () => {
     const handleRemoveFavourite = async () => {
         try {
             const response = await axios.put(
-                'http://localhost:3000/api/v1/remove-book-from-favourite',
+                'https://bookheaven-production.up.railway.app/api/v1/remove-book-from-favourite',
                 { bookId: id },
                 { headers }
             );
@@ -100,7 +100,7 @@ const ViewBookDetails = () => {
     const handleCart = async () => {
         try {
             const response = await axios.put(
-                'http://localhost:3000/api/v1/add-to-cart',
+                'https://bookheaven-production.up.railway.app/api/v1/add-to-cart',
                 { bookId: id },
                 { headers }
             );
@@ -130,7 +130,7 @@ const ViewBookDetails = () => {
         setEditLoading(true);
         try {
             await axios.put(
-                `http://localhost:3000/api/v1/update-book/${id}`,
+                `https://bookheaven-production.up.railway.app/api/v1/update-book/${id}`,
                 editForm,
                 { headers }
             );
@@ -148,7 +148,7 @@ const ViewBookDetails = () => {
         setDeleteLoading(true);
         try {
             await axios.delete(
-                `http://localhost:3000/api/v1/delete-book/${id}`,
+                `https://bookheaven-production.up.railway.app/api/v1/delete-book/${id}`,
                 { headers }
             );
             setShowDelete(false);

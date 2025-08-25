@@ -35,7 +35,7 @@ const SignUp = () => {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:3000/api/v1/signup', {
+            const response = await axios.post('https://bookheaven-production.up.railway.app/api/v1/signup', {
                 username,
                 email,
                 password,

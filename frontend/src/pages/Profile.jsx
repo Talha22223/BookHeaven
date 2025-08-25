@@ -10,7 +10,7 @@ const Profile = () => {
 useEffect(() => {
     const fetch = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/v1/get-user-info', {
+            const response = await axios.get('https://bookheaven-production.up.railway.app/api/v1/get-user-info', {
                 headers: {
                     'id': localStorage.getItem("id"),
                     'Authorization': `Bearer ${localStorage.getItem("token")}`

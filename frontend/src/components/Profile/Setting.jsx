@@ -35,7 +35,7 @@ const Setting = () => {
   const fetchUserInfo = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/get-user-info', { headers });    
+      const response = await axios.get('https://bookheaven-production.up.railway.app/api/v1/get-user-info', { headers });    
       setProfileData(response.data.user || response.data);
       setEditData(response.data.user || response.data);
       setError("");
@@ -50,7 +50,7 @@ const Setting = () => {
     setSaving(true);
     try {
       // Update address using the specific endpoint
-      const response = await axios.put('http://localhost:3000/api/v1/update-address', 
+      const response = await axios.put('https://bookheaven-production.up.railway.app/api/v1/update-address', 
         { address: editData.address }, 
         { headers }
       );

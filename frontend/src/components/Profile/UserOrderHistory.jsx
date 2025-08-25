@@ -15,7 +15,7 @@ const UserOrderHistory = () => {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/get-order-history', { headers });    
+      const response = await axios.get('https://bookheaven-production.up.railway.app/api/v1/get-order-history', { headers });    
       setOrderHistory(response.data.orders || []);
       setError("");
     } catch (err) {

@@ -84,7 +84,7 @@ const Cart = () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/v1/create-order",
+      "https://bookheaven-production.up.railway.app/api/v1/create-order",
       { books: booksPayload },
       {
         headers: {

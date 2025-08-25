@@ -14,7 +14,7 @@ const AllBooks = () => {
             const fetchData = async () => {
                 try {
                     setLoading(true);
-                    const response = await axios.get("http://localhost:3000/api/v1/get-all-books");
+                    const response = await axios.get("https://bookheaven-production.up.railway.app/api/v1/get-all-books");
                     console.log("API Response:", response.data);
                     
                     if (response.data && Array.isArray(response.data)) {

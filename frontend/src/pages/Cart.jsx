@@ -31,7 +31,7 @@ const Cart = () => {
         setLoading(true);
         setError(null);
         try {
-            const res = await axios.get('http://localhost:3000/api/v1/get-cart', { headers });
+            const res = await axios.get('https://bookheaven-production.up.railway.app/api/v1/get-cart', { headers });
             console.log("Cart API response:", res); // Debug log
             console.log("Cart API response data:", res.data); // Show raw data
             let cartArr = [];
@@ -60,7 +60,7 @@ const Cart = () => {
         setLoading(true);
         setError(null);
         try {
-            await axios.put(`http://localhost:3000/api/v1/remove-from-cart/${bookId}`, {}, { headers });
+            await axios.put(`https://bookheaven-production.up.railway.app/api/v1/remove-from-cart/${bookId}`, {}, { headers });
             // Refetch cart after removal
             await fetchCart();
         } catch (err) {
